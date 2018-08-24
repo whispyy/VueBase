@@ -4,6 +4,10 @@
       <img src="@/assets/logo.png">
       <span v-if="title">{{ title }}</span>
     </router-link>
+
+    <div id="nav">
+      <slot>{{ nav }}</slot>
+    </div>
   </div>
 </template>
 
@@ -17,6 +21,7 @@ export default {
     return { }
   }
 }
+
 </script>
 
 <style scoped>
@@ -30,6 +35,9 @@ export default {
   height: 40px;
   padding: 10px 0;
   z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 #title {
@@ -47,5 +55,9 @@ export default {
   margin-right: 6px;
   width: 40px;
   height: 40px
+}
+
+#nav {
+  padding-right: 10px;
 }
 </style>

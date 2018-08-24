@@ -1,16 +1,21 @@
 <template>
   <div id="app">
-    <top-nav :title="'Vue Blog'"></top-nav>
+    <top-nav :title="'Vue Blog'">
+      <top-nav-item :text="'Home'" :link="'/'"></top-nav-item>
+      <top-nav-item :text="'Post'" :link="'/'"></top-nav-item>
+    </top-nav>
     <router-view/>
   </div>
 </template>
 
 <script>
 import Topnav from '@/components/utils/Topnav'
+import TopnavItem from '@/components/utils/TopnavItem'
 export default {
   name: 'App',
   components: {
-    'top-nav': Topnav
+    'top-nav': Topnav,
+    'top-nav-item': TopnavItem
   }
 }
 </script>
