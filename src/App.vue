@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <top-nav :title="'Vue Blog'">
+    <top-nav :title="'Vue Base'">
       <top-nav-item :text="'Home'" :link="'/'"></top-nav-item>
       <top-nav-item :text="'Post'" :link="'/'"></top-nav-item>
     </top-nav>
