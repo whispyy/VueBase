@@ -8,7 +8,7 @@ describe('Main.vue', () => {
     expect(vm.$el.querySelector('.main h1').textContent)
       .toEqual('Random pick in your collection')
 
-    vm._data.loading.main = true;
+    vm._data.loading.main = true
     Vue.nextTick(() => {
       expect(vm.$el.querySelector('.main section').textContent).toEqual('Loading...')
     })
@@ -20,7 +20,7 @@ describe('Main.vue', () => {
     expect(vm.$el.querySelector('.main h1').textContent)
       .toEqual('Random pick in your collection')
 
-    vm._data.loading.main = false;
+    vm._data.loading.main = false
     Vue.nextTick(() => {
       expect(vm.$el.querySelector('.main section').textContent).toContain('Collection size : 0 Pick randomly')
       expect(vm._data.length === 0)
@@ -28,8 +28,8 @@ describe('Main.vue', () => {
   })
 
   it('should instantiate data properly', () => {
-    const Constructor = Vue.extend(Main)
-    const vm = new Constructor().$mount()
+    // const Constructor = Vue.extend(Main)
+    // const vm = new Constructor().$mount()
     const defaultData = Main.data()
 
     const specData = {
@@ -48,6 +48,5 @@ describe('Main.vue', () => {
     expect(typeof Main.data).toBe('function')
     expect(typeof defaultData).toBe('object')
     expect(JSON.stringify(defaultData) === JSON.stringify(specData))
-
   })
 })

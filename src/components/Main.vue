@@ -2,14 +2,16 @@
   <div class="main">
     <h1>Random pick in your collection</h1>
     <section v-if="errored.main">
-      <p>Unable to load collection</p>
+      <p class="error">Unable to load collection</p>
     </section>
 
     <section v-else>
       <div v-if="loading.main">Loading...</div>
       <div v-else>
-        <div>Collection size : {{ length }}</div>
-        <button v-on:click="randomPick()" class="action">Pick randomly</button>
+        <p>Collection size : {{ length }}</p>
+        <action-button v-on:onClick="randomPick()" :mode="'primary'">
+          Pick randomly
+        </action-button>
         <detail v-bind:loading="loading.detail" v-bind:info="info"></detail>
       </div>
 
@@ -20,10 +22,12 @@
 <script>
 import axios from 'axios'
 import Detail from '@/components/Detail'
+import ActionButton from '@/components/utils/ActionButton'
 
 export default {
   name: 'Main',
   components: {
+    'action-button': ActionButton,
     'detail': Detail
   },
   data () {
@@ -100,15 +104,7 @@ h1, h2 {
   font-weight: normal;
 }
 
-.action {
-  margin: 2em;
-  padding: 0.75em 2em;
-  border-radius: 2em;
-  display: inline-block;
-  color: #fff;
-  background-color: #4fc08d;
-  transition: all 0.15s ease;
-  box-sizing: border-box;
-  border: 1px solid #4fc08d;
+.error {
+  color: red;
 }
 </style>

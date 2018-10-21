@@ -18,7 +18,9 @@ export default {
     title: String
   },
   data () {
-    return { }
+    return {
+      nav: null
+    }
   }
 }
 
