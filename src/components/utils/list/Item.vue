@@ -1,7 +1,11 @@
 <template>
   <li class="item">
-    <h2 v-if="title">{{ title }}</h2>
-    <span v-if="desc">{{ desc }}</span>
+    <div class="item-block">
+      <h2 v-if="title">{{ title }}</h2>
+      <p v-if="desc">{{ desc }}</p>
+      <slot></slot>
+    </div>
+    <div class="side-action"></div>
   </li>
 </template>
 
@@ -17,6 +21,13 @@ export default {
 
 <style scoped>
 .item {
+  display: flex;
+  margin: 0;
+  padding: 0.5em;
   border: solid 1px lightgrey;
+}
+
+.item-block * {
+  margin: 0;
 }
 </style>

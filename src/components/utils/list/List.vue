@@ -15,6 +15,8 @@ export default {
 
 <style scoped>
 .list {
+  padding: 0;
   border: solid 1px grey;
+  list-style: none;
 }
 </style>
