@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <top-nav :title="'Vue Base'">
-      <top-nav-item :text="'Home'" :link="'/'" :isActive="true"></top-nav-item>
-      <top-nav-item :text="'Post'" :link="'/'"></top-nav-item>
+      <top-nav-item :text="'Home'" :link="'/home'"></top-nav-item>
+      <top-nav-item :text="'Posts'" :link="'/posts'"></top-nav-item>
     </top-nav>
     <router-view/>
   </div>

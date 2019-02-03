@@ -1,5 +1,5 @@
 <template>
-  <router-link class="nav__item" v-bind:class="{ 'active': isActive }" :to="link">
+  <router-link class="nav__item" active-class="active" :to="link">
     <span v-if="text">{{ text }}</span>
   </router-link>
 </template>
@@ -9,8 +9,7 @@ export default {
   name: 'TopnavItem',
   props: {
     text: String,
-    link: String,
-    isActive: Boolean
+    link: String
   },
   data () {
     return { }
