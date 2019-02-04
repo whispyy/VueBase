@@ -3,6 +3,7 @@
     <top-nav :title="'Vue Base'">
       <top-nav-item :text="'Home'" :link="'/home'"></top-nav-item>
       <top-nav-item :text="'Posts'" :link="'/posts'"></top-nav-item>
+      <top-nav-item :text="'Chat'" :link="'/chat'"></top-nav-item>
     </top-nav>
     <router-view/>
   </div>

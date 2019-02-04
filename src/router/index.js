@@ -18,6 +18,11 @@ export default new Router({
       path: '/posts',
       name: 'Posts',
       component: () => import('@/components/Posts')
+    },
+    {
+      path: '/chat',
+      name: 'Chat',
+      component: () => import('@/components/Chat')
     }
   ]
 })
