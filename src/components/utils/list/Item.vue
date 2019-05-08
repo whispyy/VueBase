@@ -5,8 +5,11 @@
       <p v-if="desc">{{ desc }}</p>
       <slot></slot>
     </div>
-    <div class="side-action">
-      <div class="side-action-icon"></div>
+    <div class="side-action" v-if="dropdown">
+      <div class="side-action-icon" v-on:click="toggle = !toggle"></div>
+    </div>
+    <div class="dropdown-container" v-if="toggle">
+      sdfsdf: {{ toggle }}
     </div>
   </li>
 </template>
@@ -16,7 +19,13 @@ export default {
   name: 'Item',
   props: {
     title: String,
-    desc: String
+    desc: String,
+    dropdown: Boolean
+  },
+  data () {
+    return {
+      toggle: false
+    }
   }
 }
 </script>
