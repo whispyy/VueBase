@@ -8,19 +8,21 @@
     <div class="side-action" v-if="dropdown">
       <div class="side-action-icon" v-on:click="toggle = !toggle"></div>
     </div>
-    <div class="dropdown-container" v-if="toggle">
-      sdfsdf: {{ toggle }}
-    </div>
+    <dropdown v-if="toggle" :list="dropdown"></dropdown>
   </li>
 </template>
 
 <script>
+import Dropdown from '@/components/utils/list/Dropdown.vue'
 export default {
   name: 'Item',
+  components: {
+    'dropdown': Dropdown
+  },
   props: {
     title: String,
     desc: String,
-    dropdown: Boolean
+    dropdown: Array
   },
   data () {
     return {
